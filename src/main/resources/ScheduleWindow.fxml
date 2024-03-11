@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.clientside.controllers.ScheduleWindowController">
+
+    <HBox>
+        <Button text="Refresh" fx:id="refreshButton" onAction="#handleRefreshButton"/>
+    </HBox>
+
+    <TableView fx:id="classTable">
+        <columns>
+            <TableColumn text="Class ID" fx:id="classIdCol"/>
+            <TableColumn text="Class Name" fx:id="classNameCol"/>
+            <TableColumn text="Room" fx:id="roomCol"/>
+            <TableColumn text="Day" fx:id="dayCol"/>
+            <TableColumn text="Time" fx:id="timeCol"/>
+        </columns>
+    </TableView>
+
+</VBox>

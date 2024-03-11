@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clientside.controllers.ClassManagementController">
+    <top>
+        <VBox alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+            <Label alignment="CENTER" prefHeight="23.0" prefWidth="172.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Class Management" />
+        <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="600.0" spacing="10.0">
+            <children>
+               <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="33.0" text="Stop" textAlignment="RIGHT" />
+                <StackPane prefHeight="60.0" prefWidth="48.0" style="-fx-padding: 0 25 0 0;">
+                    <children>
+                        <Circle fill="#ff411f" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Button fx:id="stopButton" graphicTextGap="3.0" onAction="#handleStopButton" style="-fx-background-color: transparent;" />
+                    </children>
+                </StackPane>
+            </children>
+        </HBox>
+        </VBox>
+    </top>
+
+
+    <center>
+        <VBox alignment="CENTER_LEFT" prefHeight="412.0" prefWidth="600.0" spacing="10" style="-fx-padding: 0 15 0 10;">
+            <TextField fx:id="classNameField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="Class Name" />
+            <TextField fx:id="roomField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="Room" />
+            <TextField fx:id="dayField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="Day" />
+            <TextField fx:id="timeField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="Time" />
+            <Button fx:id="addButton" onAction="#handleAddButton" prefHeight="26.0" prefWidth="110.0" text="Add Class" textAlignment="CENTER">
+            <font>
+               <Font size="12.0" />
+            </font></Button>
+            <Button fx:id="removeButton" onAction="#handleRemoveButton" prefHeight="26.0" prefWidth="110.0" text="Remove Class" textAlignment="CENTER">
+            <font>
+               <Font size="12.0" />
+            </font></Button>
+            <Button fx:id="displayButton" onAction="#handleDisplayButton" prefHeight="26.0" prefWidth="110.0" text="Display Schedule">
+            <font>
+               <Font size="12.0" />
+            </font></Button>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" prefHeight="78.0" prefWidth="600.0" spacing="4.0" style="-fx-padding: 0 10 0 10;">
+            <Label prefHeight="17.0" prefWidth="137.0" text="Response from server:" />
+            <TextArea fx:id="responseTextArea" prefHeight="37.0" prefWidth="600.0" />
+        </VBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,5 @@
+.login-background {
+    -fx-background-image: url("ULImage.jpeg"); /* Replace "path/to/your/image.jpg" with the actual path to your image */
+    -fx-background-size: cover; /* Adjusts the size of the background image to cover the entire region */
+    -fx-background-repeat: no-repeat; /* Ensures that the background image is not repeated */
+}
