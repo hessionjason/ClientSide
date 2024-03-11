@@ -44,7 +44,12 @@
             <font>
                <Font size="12.0" />
             </font></Button>
-            <Button fx:id="displayButton" onAction="#handleDisplayButton" prefHeight="26.0" prefWidth="110.0" text="Display Schedule">
+         <Button fx:id="displayModuleButton" onAction="#handleDisplayModuleButton" prefHeight="26.0" prefWidth="150.0" text="Display Module Schedule">
+            <font>
+               <Font size="12.0" />
+            </font>
+         </Button>
+            <Button fx:id="displayButton" onAction="#handleDisplayButton" prefHeight="26.0" prefWidth="150.0" text="Display Full Schedule">
             <font>
                <Font size="12.0" />
             </font></Button>

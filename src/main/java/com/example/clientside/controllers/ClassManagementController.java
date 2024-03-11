@@ -192,6 +192,12 @@ public class ClassManagementController {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void handleDisplayModuleButton() {
+        String message = "DISPLAY_MODULE_SCHEDULE";
+        writer.println(message);
+
+    }
 
     // Method to handle the Stop button click event
     @FXML
