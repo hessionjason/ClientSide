@@ -70,32 +70,25 @@ public class ScheduleWindowController {
 
         List<ClassInfo> scheduleData = new ArrayList<>();
 
-        // split the schedule string by newline character
+        // Split the schedule string by newline character
         String[] lines = schedule.split("\n");
 
-        // iterate over each line in the schedule
+        // Iterate over each line in the schedule
         for (String line : lines) {
-            // split each line by a delimiter (e.g., comma) to extract class info
-            String[] parts = line.split(",");
+            // Split each line by a delimiter (e.g., comma) to extract class info
+            String[] parts = line.split(", ");
 
-            // format is: "Class ID: 2, Class Name: MA4004, Room: DG016, Day: Tuesday, Time: 2PM"
+            // Assuming the format is: "Class ID: 2, Class Name: MA4004, Room: DG016, Day: Tuesday, Time: 2PM"
             if (parts.length == 5) {
                 // Extracting the necessary information from each part
-                String classIdStr = parts[0].split(":")[1].trim();
-                String className = parts[1].split(":")[1].trim();
-                String room = parts[2].split(":")[1].trim();
-                String day = parts[3].split(":")[1].trim();
-                String timeStr = parts[4].split(":")[1].trim();
+                String classIdStr = parts[0].split(": ")[1];
+                String className = parts[1].split(": ")[1];
+                String room = parts[2].split(": ")[1];
+                String day = parts[3].split(": ")[1];
+                String time = parts[4].split(": ")[1];
 
                 // Parsing classId to Integer
                 int classId = Integer.parseInt(classIdStr);
-
-                // Extracting time and converting it to a consistent format
-                String[] timeParts = timeStr.split(" ");
-                String time = timeParts[0]; // Extracting the time part
-
-                // Print debug information
-                System.out.println("Parsed class info: " + classId + ", " + className + ", " + room + ", " + day + ", " + time);
 
                 // Create a new ClassInfo object and add it to the list
                 ClassInfo classInfo = new ClassInfo(classId, className, room, day, time);
