@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ScheduleWindowController {
 
-    private ClassManagementController classManagementController; // Injected instance of ClassManagementController
+    private ClassManagementController classManagementController; // create instance of ClassManagementController
 
     @FXML
     private TableView<ClassInfo> classTable;
@@ -62,22 +62,23 @@ public class ScheduleWindowController {
 
     @FXML
     private void handleRefreshButton() {
-        // Call the method to fetch schedule data from the server via ClassManagementController
+        // call the method to fetch schedule data from the server via ClassManagementController
         classManagementController.handleDisplayButton();
     }
 
     private List<ClassInfo> parseSchedule(String schedule) {
+
         List<ClassInfo> scheduleData = new ArrayList<>();
 
-        // Split the schedule string by newline character
+        // split the schedule string by newline character
         String[] lines = schedule.split("\n");
 
-        // Iterate over each line in the schedule
+        // iterate over each line in the schedule
         for (String line : lines) {
-            // Split each line by a delimiter (e.g., comma) to extract class info
+            // split each line by a delimiter (e.g., comma) to extract class info
             String[] parts = line.split(",");
 
-            // Assuming the format is: "Class ID: 2, Class Name: MA4004, Room: DG016, Day: Tuesday, Time: 2PM"
+            // format is: "Class ID: 2, Class Name: MA4004, Room: DG016, Day: Tuesday, Time: 2PM"
             if (parts.length == 5) {
                 // Extracting the necessary information from each part
                 String classIdStr = parts[0].split(":")[1].trim();

@@ -5,16 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-
-
 import java.io.IOException;
 
 public class Main extends Application {
 
     private static Main instance;
     private Stage primaryStage;
-    private Stage scheduleStage; // Declare a stage field to hold the reference to the schedule window stage
+    private Stage scheduleStage;
 
 
     @Override
@@ -60,9 +57,8 @@ public class Main extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClassManagement.fxml"));
             Parent root = loader.load();
 
-            // Get the current stage
+            // get the current stage
             Stage stage = Main.getInstance().getPrimaryStage();
-
             // Set the scene to ClassManagement
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -74,14 +70,14 @@ public class Main extends Application {
     }
     public void showClassSchedule() {
         try {
-            // Load ScheduleWindow.fxml
+            // load ScheduleWindow.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ScheduleWindow.fxml"));
             Parent root = loader.load();
 
-            // Get the current stage
+            // get the current stage
             Stage stage = Main.getInstance().getPrimaryStage();
 
-            // Set the scene to ScheduleWindow
+            // set the scene to ScheduleWindow
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Class Schedule");

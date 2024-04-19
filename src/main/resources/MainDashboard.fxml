@@ -24,35 +24,35 @@
     <center>
         <GridPane alignment="CENTER" gridLinesVisible="true" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="button1" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" styleClass="custom-button" text="Class Management" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#handleClassManagement">
+                <Button fx:id="button1" mnemonicParsing="false" onAction="#handleClassManagement" prefHeight="100.0" prefWidth="120.0" styleClass="custom-button" text="Class Management" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <font>
                   <Font size="12.0" />
                </font></Button>
-                <Button fx:id="button2" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Button 2" GridPane.columnIndex="2">
+                <Button fx:id="button2" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Exam Info" GridPane.columnIndex="2">
                <font>
                   <Font size="12.0" />
                </font></Button>
-                <Button fx:id="button3" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Button 3" GridPane.columnIndex="3">
+                <Button fx:id="button3" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Room Info" GridPane.columnIndex="3">
                <font>
                   <Font size="12.0" />
                </font></Button>
-                <Button fx:id="button4" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Button 4" GridPane.columnIndex="4">
+                <Button fx:id="button4" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Week Dates" GridPane.columnIndex="4">
                <font>
                   <Font size="12.0" />
                </font></Button>
-                <Button fx:id="button5" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Button 5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Button fx:id="button5" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Calendar" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="12.0" />
                </font></Button>
-                <Button fx:id="button6" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Button 6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Button fx:id="button6" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Grades" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="12.0" />
                </font></Button>
-                <Button fx:id="button7" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Button 7" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <Button fx:id="button7" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="QCA Calculator" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="12.0" />
                </font></Button>
-                <Button fx:id="button8" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Button 8" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                <Button fx:id="button8" mnemonicParsing="false" prefHeight="100.0" prefWidth="120.0" text="Timetable FAQ" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <font>
                   <Font size="12.0" />
                </font></Button>

@@ -14,14 +14,14 @@ public class MainDashboardController {
     @FXML
     private void handleClassManagement(ActionEvent event) {
         try {
-            // Load ClassManagement.fxml
+            // load ClassManagement.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ClassManagement.fxml"));
             Parent root = loader.load();
 
-            // Get the current stage
+            // get the current stage
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // Set the scene to ClassManagement
+            // set the scene to ClassManagement
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle("Class Management");

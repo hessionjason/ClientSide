@@ -5,13 +5,13 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.clientside.controllers.ScheduleWindowController">
+      fx:controller="com.example.clientside.controllers.ModuleScheduleController">
 
     <HBox>
-        <Button text="Refresh" fx:id="refreshButton" onAction="#handleRefreshButton"/>
+        <Button text="Refresh" fx:id="refreshButton" onAction="#handleModuleRefreshButton"/>
     </HBox>
 
-    <TableView fx:id="classTable">
+    <TableView fx:id="moduleTableView">
         <columns>
             <TableColumn text="Class ID" fx:id="classIdCol"/>
             <TableColumn text="Class Name" fx:id="classNameCol"/>
@@ -22,3 +22,4 @@
     </TableView>
 
 </VBox>
+
