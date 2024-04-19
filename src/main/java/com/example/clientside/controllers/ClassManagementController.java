@@ -5,6 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ChoiceBox;
+import com.example.clientside.models.ClassInfo;
+
 
 import java.io.PrintWriter;
 import java.io.BufferedReader;
@@ -19,11 +21,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
+
+
 
 
 public class ClassManagementController {
 
     private Socket socket;
+
     @FXML
     private ChoiceBox<String> classNameChoiceBox;
 
@@ -184,21 +190,46 @@ public class ClassManagementController {
 
     private void displayScheduleWindow(String schedule) {
         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/TimetableGrid.fxml"));
+            Parent root = loader.load();
+            TimetableController timetableController = loader.getController();
+
+            // Parse the schedule and populate the timetable
+            List<ClassInfo> classInfos = timetableController.parseSchedule(schedule);
+            timetableController.populateTimetable(classInfos);
+
+            if (scheduleStage == null) {
+                scheduleStage = new Stage();
+                scheduleStage.setTitle("Class Schedule");
+                scheduleStage.setScene(new Scene(root));
+            } else if (scheduleStage.isShowing()) {
+                scheduleStage.close(); // Ensure only one window is open at a time
+                scheduleStage.setScene(new Scene(root));
+            }
+            scheduleStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /*private void displayScheduleWindow(String schedule) {
+        try {
             // check if the scheduleStage is already initialized and showing(so wont open two windows
             if (scheduleStage != null && scheduleStage.isShowing()) {
                 // If the stage is already showing, close it
                 scheduleStage.close();
             }
             // Load the FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ScheduleWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/TimetableGrid.fxml"));
             Parent root = loader.load();
 
             // Set the controller and pass the schedule data
-            ScheduleWindowController controller = loader.getController();
-            controller.setScheduleData(schedule);
+            //ScheduleWindowController controller = loader.getController();
+            //controller.setScheduleData(schedule);
 
             // Set the ClassManagementController reference
-            controller.setClassManagementController(this);
+            //controller.setClassManagementController(this);
 
             // Create a new stage
             scheduleStage = new Stage();
@@ -213,7 +244,7 @@ public class ClassManagementController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
     @FXML
     public void handleDisplayModuleSchedule() {
         try {
