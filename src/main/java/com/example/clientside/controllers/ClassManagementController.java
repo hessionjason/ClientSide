@@ -22,6 +22,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.List;
+import javafx.scene.control.Alert;
+
 
 
 
@@ -194,23 +196,43 @@ public class ClassManagementController {
             Parent root = loader.load();
             TimetableController timetableController = loader.getController();
 
-            // Parse the schedule and populate the timetable
+            // Pass this controller's reference to the TimetableController if needed
+            timetableController.setClassManagementController(this);
+
             List<ClassInfo> classInfos = timetableController.parseSchedule(schedule);
             timetableController.populateTimetable(classInfos);
 
             if (scheduleStage == null) {
                 scheduleStage = new Stage();
                 scheduleStage.setTitle("Class Schedule");
-                scheduleStage.setScene(new Scene(root));
             } else if (scheduleStage.isShowing()) {
                 scheduleStage.close(); // Ensure only one window is open at a time
-                scheduleStage.setScene(new Scene(root));
             }
+            scheduleStage.setScene(new Scene(root));
             scheduleStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    public String fetchLatestSchedule() {
+        // Logic to fetch the latest schedule
+        // For example:
+        String message = "DISPLAY_SCHEDULE";
+        writer.println(message);
+        StringBuilder schedule = new StringBuilder();
+        try {
+            String response;
+            while ((response = reader.readLine()) != null && !response.isEmpty()) {
+                schedule.append(response).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return schedule.toString();
+    }
+
+
 
 
     /*private void displayScheduleWindow(String schedule) {
@@ -252,7 +274,7 @@ public class ClassManagementController {
             String message = "DISPLAY_MODULE_SCHEDULE " + moduleName;
             writer.println(message);
 
-                StringBuilder moduleSchedule = new StringBuilder();
+            StringBuilder moduleSchedule = new StringBuilder();
             String response = reader.readLine(); // Read the first line of response
 
             // Check if response is null or empty
@@ -274,6 +296,12 @@ public class ClassManagementController {
 
             } else {
                 responseTextArea.setText("Error: Empty response from the server.");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Module Selection Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Please select a module.");
+                alert.showAndWait();
+                return; // Exit the method early
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -284,7 +312,7 @@ public class ClassManagementController {
     private Stage moduleScheduleStage; // Add this as a class-level variable
 
     private void displayModuleScheduleWindow(String schedule) {
-        try {
+        /*try {
             // Check if the moduleScheduleStage is already initialized and showing
             if (moduleScheduleStage != null && moduleScheduleStage.isShowing()) {
                 // If the stage is already showing, close it
@@ -302,12 +330,31 @@ public class ClassManagementController {
 
             // Create a new stage for the module schedule window
             moduleScheduleStage = new Stage();
-            moduleScheduleStage.setTitle("Module Schedule");
+            moduleScheduleStage.setTitle("Module Schedule");*/
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/TimetableModuleGrid.fxml"));
+            Parent root = loader.load();
+            TimetableModuleController timetableModuleController = loader.getController();
+
+            // Pass this controller's reference to the TimetableController if needed
+            timetableModuleController.setClassManagementController(this);
+
+            List<ClassInfo> classInfos = timetableModuleController.parseSchedule(schedule);
+            timetableModuleController.populateTimetable(classInfos);
+
+            if (moduleScheduleStage == null) {
+                moduleScheduleStage = new Stage();
+                moduleScheduleStage.setTitle("Module Schedule");
+            } else if (moduleScheduleStage.isShowing()) {
+                moduleScheduleStage.close(); // Ensure only one window is open at a time
+            }
+
+
 
             // Set the scene
             Scene scene = new Scene(root);
             moduleScheduleStage.setScene(scene);
-
             // Show the module schedule window
             moduleScheduleStage.show();
         } catch (IOException e) {

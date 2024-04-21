@@ -14,4 +14,39 @@
     -fx-stroke: black;
     -fx-stroke-width: 1;
 }
+.grid-cell {
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+.header-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 5px;
+}
+.day-label {
+    -fx-background-color: green;
+    -fx-padding: 5;
+    -fx-alignment: center;
+}
+
+.day-label-container {
+    -fx-padding: 2;
+    -fx-background-color: green; /* Ensure the background fills the gaps between labels if needed */
+}
+.grid-cell {
+    -fx-background-color: white; /* or any other color you prefer for the cell background */
+    -fx-border-color: black; /* color of the grid lines */
+    -fx-border-width: 0.5; /* width of the grid lines */
+}
+.transparent-label {
+    -fx-background-color: rgba(0, 0, 0, 0); /* fully transparent background */
+    -fx-text-fill: white; /* white text */
+}
+
+
+
+
 

@@ -11,7 +11,7 @@
 
     <center>
         <VBox alignment="center" spacing="10">
-            <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Main Login" textFill="#f0f1f2" />
+            <Label styleClass="transparent-label" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Main Login" textFill="#f0f1f2" />
             <TextField fx:id="usernameField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="225.0" promptText="Username" />
             <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="225.0" promptText="Password" />
             <Button onAction="#handleLoginButton" text="Login" />

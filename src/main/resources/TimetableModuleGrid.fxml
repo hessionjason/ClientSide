@@ -10,8 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clientside.controllers.TimetableController">
-    <Button fx:id="refreshButton" onAction="#refreshTimetable" text="Refresh" />
+<VBox stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clientside.controllers.TimetableModuleController">
+    <Button fx:id="refreshButton" onAction="#refreshModuleTimetable" text="Refresh" />
 
     <!-- GridPane for headers -->
     <GridPane alignment="CENTER" hgap="10">
@@ -24,30 +24,30 @@
         </columnConstraints>
         <StackPane styleClass="day-label-container" GridPane.columnIndex="0"><Label minWidth="100" prefWidth="100" style="-fx-background-color: green; -fx-padding: 5;" text="Monday" textFill="WHITE">
             <font>
-               <Font name="System Bold" size="13.0" />
+                <Font name="System Bold" size="13.0" />
             </font>
             <StackPane.margin>
-               <Insets />
+                <Insets />
             </StackPane.margin></Label></StackPane>
         <StackPane styleClass="day-label-container" GridPane.columnIndex="1"><Label minWidth="100" prefWidth="100" style="-fx-background-color: green; -fx-padding: 5;" text="Tuesday" textFill="#fffdfd">
             <font>
-               <Font name="System Bold" size="13.0" />
+                <Font name="System Bold" size="13.0" />
             </font></Label></StackPane>
         <StackPane styleClass="day-label-container" GridPane.columnIndex="2"><Label minWidth="100" prefWidth="100" style="-fx-background-color: green; -fx-padding: 5;" text="Wednesday" textFill="WHITE">
             <font>
-               <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="13.0" />
             </font></Label></StackPane>
         <StackPane styleClass="day-label-container" GridPane.columnIndex="3"><Label minWidth="100" prefWidth="100" style="-fx-background-color: green; -fx-padding: 5;" text="Thursday" textFill="WHITE">
             <font>
-               <Font name="System Bold" size="13.0" />
+                <Font name="System Bold" size="13.0" />
             </font></Label></StackPane>
         <StackPane styleClass="day-label-container" GridPane.columnIndex="4"><Label minWidth="100" prefWidth="100" style="-fx-background-color: green; -fx-padding: 5;" text="Friday" textFill="#fffdfd">
             <font>
-               <Font name="System Bold Italic" size="13.0" />
+                <Font name="System Bold Italic" size="13.0" />
             </font></Label></StackPane>
-      <rowConstraints>
-         <RowConstraints />
-      </rowConstraints>
+        <rowConstraints>
+            <RowConstraints />
+        </rowConstraints>
     </GridPane>
 
     <!-- Main timetable GridPane -->

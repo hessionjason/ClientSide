@@ -20,20 +20,19 @@ import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
 import javafx.geometry.Insets;
 
-public class TimetableController {
-
+public class TimetableModuleController {
     @FXML
     private GridPane timetableGrid;
+
     private ClassManagementController classManagementController;
 
-
     private final Map<String, Integer> dayToIndex = new HashMap<>();
+
     private final Map<LocalTime, Integer> timeToIndex = new HashMap<>();
 
     public void setClassManagementController(ClassManagementController controller) {
         this.classManagementController = controller;
     }
-
     @FXML
     public void initialize() {
         // Initialization logic here...
@@ -61,7 +60,6 @@ public class TimetableController {
             }
         }
     }
-
     public void populateTimetable(List<ClassInfo> classInfos) {
         //timetableGrid.getChildren().clear();
         timetableGrid.getChildren().removeIf(node -> node instanceof Label && "class-label".equals(node.getStyleClass().get(0)));
@@ -79,8 +77,6 @@ public class TimetableController {
             }
         }
     }
-
-
     public List<ClassInfo> parseSchedule(String schedule) {
         List<ClassInfo> scheduleData = new ArrayList<>();
         String[] lines = schedule.split("\n");
@@ -98,8 +94,9 @@ public class TimetableController {
         return scheduleData;
     }
 
+
     @FXML
-    private void refreshTimetable() {
+    private void refreshModuleTimetable() {
         /*if (classManagementController != null) {
             // Fetch the latest schedule from the ClassManagementController
             String schedule = classManagementController.fetchLatestSchedule(); // Ensure there's a method fetchLatestSchedule() in ClassManagementController
@@ -107,7 +104,6 @@ public class TimetableController {
             populateTimetable(classInfos);
         }
     }*/
-        classManagementController.handleDisplayButton();
+        classManagementController.handleDisplayModuleSchedule();
     }
-
 }
