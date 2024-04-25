@@ -41,10 +41,94 @@
     -fx-border-color: black; /* color of the grid lines */
     -fx-border-width: 0.5; /* width of the grid lines */
 }
+
 .transparent-label {
     -fx-background-color: rgba(0, 0, 0, 0); /* fully transparent background */
     -fx-text-fill: white; /* white text */
 }
+
+/* Define styles for buttons */
+.button {
+    /* Define common button styles here */
+}
+
+button.transparent-label:hover {
+    -fx-background-color: rgba(0, 0, 0, 0); /* Maintain transparent background on hover */
+    -fx-text-fill: white; /* Change text color on hover */
+}
+
+/* Add more button styles as needed */
+
+.dashboard-background {
+    -fx-background-image: url("ULImage2.jpeg"); /* Replace "path/to/your/image.jpg" with the actual path to your image */
+    -fx-background-size: cover; /* Adjusts the size of the background image to cover the entire region */
+    -fx-background-repeat: no-repeat; /* Ensures that the background image is not repeated */
+}
+.bevel-grey {
+  -fx-background-color: linear-gradient(#f2f2f2, #d6d6d6), linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%), linear-gradient(#dddddd 0%, #f6f6f6 50%);
+  -fx-background-radius: 8, 7, 6;
+  -fx-background-insets: 0, 1, 2;
+  -fx-text-fill: black;
+  -fx-effect: dropshadow( three-pass-box, rgba(0, 0, 0, 0.6), 5, 0.0, 0, 1);
+}
+.bevel-grey:pressed {
+  -fx-background-color: #235891;
+}
+.grid-pane {
+    -fx-hgap: 2px; /* Horizontal gap between cells */
+    -fx-vgap: 2px; /* Vertical gap between cells */
+    -fx-border-color: black; /* Color of the grid lines */
+    -fx-border-width: 2px; /* Thickness of the grid lines */
+    -fx-padding: 2px; /* Padding to separate grid cells */
+}
+/*.button:hover {
+    -fx-background-color: linear-gradient(white, #7CFC00);
+}*/
+
+
+.button-login {
+    -fx-padding: 8 15 8 15;
+    -fx-background-color: #0078D7; /* Default blue background */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Shadow effect */
+    -fx-transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
+}
+
+.button-login:hover {
+    -fx-background-color: #808080; /* Grey background on hover */
+    -fx-scale-x: 1.05; /* Scale up slightly on hover */
+    -fx-scale-y: 1.05; /* Scale up slightly on hover */
+    -fx-transition: all 1.0s ease-in-out; /* Ensure the transition applies to hover as well */
+}
+
+.button-login:active {
+    -fx-text-fill: #000; /* Change text color on click */
+    -fx-background-color: #707070; /* Slightly darker grey on active */
+}
+.common-button {
+    -fx-padding: 10px; /* Uniform padding around text */
+    -fx-background-color: #0078D7; /* Consistent blue background */
+    -fx-text-fill: white; /* White text for better contrast */
+    -fx-font-size: 12px; /* Font size */
+    -fx-font-family: "System"; /* Default system font, adjust if you prefer another */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-background-radius: 5px; /* Background also has rounded corners */
+}
+
+.common-button:hover {
+    -fx-background-color: #0058A3; /* Darker blue on hover */
+}
+
+
+
+
+
+
+
 
 
 
