@@ -231,42 +231,6 @@ public class ClassManagementController {
         }
         return schedule.toString();
     }
-
-
-
-
-    /*private void displayScheduleWindow(String schedule) {
-        try {
-            // check if the scheduleStage is already initialized and showing(so wont open two windows
-            if (scheduleStage != null && scheduleStage.isShowing()) {
-                // If the stage is already showing, close it
-                scheduleStage.close();
-            }
-            // Load the FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/TimetableGrid.fxml"));
-            Parent root = loader.load();
-
-            // Set the controller and pass the schedule data
-            //ScheduleWindowController controller = loader.getController();
-            //controller.setScheduleData(schedule);
-
-            // Set the ClassManagementController reference
-            //controller.setClassManagementController(this);
-
-            // Create a new stage
-            scheduleStage = new Stage();
-            scheduleStage.setTitle("Class Schedule");
-
-            // Set the scene
-            Scene scene = new Scene(root);
-            scheduleStage.setScene(scene);
-
-            // Show the window
-            scheduleStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
     @FXML
     public void handleDisplayModuleSchedule() {
         try {
@@ -312,25 +276,6 @@ public class ClassManagementController {
     private Stage moduleScheduleStage; // Add this as a class-level variable
 
     private void displayModuleScheduleWindow(String schedule) {
-        /*try {
-            // Check if the moduleScheduleStage is already initialized and showing
-            if (moduleScheduleStage != null && moduleScheduleStage.isShowing()) {
-                // If the stage is already showing, close it
-                moduleScheduleStage.close();
-            }
-
-            // Load the FXML file for the module schedule window
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModuleScheduleWindow.fxml"));
-            Parent root = loader.load();
-
-            // Set the controller and pass the schedule data
-            ModuleScheduleController controller = loader.getController();
-            controller.setClassManagementController(this); // pass a reference to the ClassManagementController
-            controller.setModuleScheduleData(schedule);
-
-            // Create a new stage for the module schedule window
-            moduleScheduleStage = new Stage();
-            moduleScheduleStage.setTitle("Module Schedule");*/
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/TimetableModuleGrid.fxml"));
